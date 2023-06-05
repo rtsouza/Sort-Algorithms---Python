@@ -4,34 +4,34 @@ from bubble import bubble
 from selection import selection
 from insertion import insertion
 from merge import sort_mg
-import time as tm
+import datetime as dt
 
 
 def main():
-    num_list = [randint(0, 100) for x in range(10)]
+    num_list = [randint(0, 5000) for x in range(5000)]
     print(f"List before sort: {num_list}")
 
-    bubble_start = tm.time()
+    b_st = dt.datetime.now()
     bubble_list = bubble(num_list)
-    bubble_finish = tm.time()
+    b_et = dt.datetime.now()
 
-    selection_start = tm.time()
+    s_st = dt.datetime.now()
     selection_list = selection(num_list)
-    selection_finish = tm.time()
+    s_et = dt.datetime.now()
 
-    insertion_start = tm.time()
+    i_st = dt.datetime.now()
     insertion_list = insertion(num_list)
-    insertion_finish = tm.time()
+    i_et = dt.datetime.now()
 
-    merge_start = tm.time()
+    m_st = dt.datetime.now()
     merge_list = sort_mg(num_list)
-    merge_finish = tm.time()
+    m_et = dt.datetime.now()
 
 
-    print(f"Bubble sort: {bubble_list} \n Execution time: {bubble_finish - bubble_start}seconds\n")
-    print(f"Selection sort: {selection_list} \n Execution time: {selection_finish - selection_start}seconds\n")
-    print(f"Insertion sort: {insertion_list} \n Execution time: {insertion_finish - insertion_start}seconds\n")
-    print(f"Merge sort: {merge_list} \n Execution time: {merge_finish - merge_start} seconds\n")
+    print(f"Bubble sort: {bubble_list} \n Execution time: {(b_et - b_st).total_seconds()} seconds\n")
+    print(f"Selection sort: {selection_list} \n Execution time: {(s_et - s_st).total_seconds()} seconds\n")
+    print(f"Insertion sort: {insertion_list} \n Execution time: {(i_et - i_st).total_seconds()} seconds\n")
+    print(f"Merge sort: {merge_list} \n Execution time: {(m_et - m_st).total_seconds()} seconds\n")
 
 
 
